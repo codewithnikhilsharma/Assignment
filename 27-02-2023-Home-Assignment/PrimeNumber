@@ -1,0 +1,35 @@
+package Now;
+public class PrimeNumber {
+    public static void main(String[] args) {
+        // Initialize the starting number
+        int num = 2;
+
+        // Print the starting message
+        System.out.print("Prime numbers between 1 and 150 are: ");
+
+        // Loop through all numbers from 2 to 150
+        while (num <= 150) {
+            // Assume the number is prime initially
+            boolean isPrime = true;
+            // Check all numbers from 2 to half the current number
+            int i = 2;
+            while (i <= num / 2) {
+                // If the current number is divisible by any number other than 1 or itself, it's not prime
+                if (num % i == 0) {
+                    isPrime = false;
+                    // Break out of the inner loop early
+                    break;
+                }
+                i++;
+            }
+
+            // If the number is prime, print it
+            if (isPrime) {
+                System.out.print(num + ", ");
+            }
+
+            // Move on to the next number
+            num++;
+        }
+    }
+}
